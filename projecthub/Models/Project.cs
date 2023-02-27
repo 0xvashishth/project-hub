@@ -8,9 +8,7 @@ namespace projecthub.Models
         public long Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public SqlDateTime CreatedAt;
-        public SqlDateTime EditedAt { get; set; }
-        public string[] Imagesurl { get; set; } = Array.Empty<string>();
+        public string Imagesurls { get; set; }
         public string Ytlink { get; set; }
         public User Creater { get; set; }
         public string Visibility { get; set; }
