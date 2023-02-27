@@ -11,6 +11,6 @@
         public int Points { get; set; }
         public byte[] PasswordHash { get; set; } = Array.Empty<byte>();
         public byte[] PasswordSalt { get; set; } = Array.Empty<byte>();
-
+        public List<Project>? Projects { get; set; }
     }
 }
