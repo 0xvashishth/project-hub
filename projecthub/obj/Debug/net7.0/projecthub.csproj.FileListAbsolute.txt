@@ -31,3 +31,13 @@ C:\Users\user1\Music\projecthub\projecthub\obj\Debug\net7.0\refint\projecthub.dl
 C:\Users\user1\Music\projecthub\projecthub\obj\Debug\net7.0\projecthub.pdb
 C:\Users\user1\Music\projecthub\projecthub\obj\Debug\net7.0\projecthub.genruntimeconfig.cache
 C:\Users\user1\Music\projecthub\projecthub\obj\Debug\net7.0\ref\projecthub.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.csproj.AssemblyReference.cache
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.AssemblyInfoInputs.cache
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.AssemblyInfo.cs
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.csproj.CoreCompileInputs.cache
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\refint\projecthub.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.pdb
