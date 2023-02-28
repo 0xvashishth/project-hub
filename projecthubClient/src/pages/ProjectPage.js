@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Grid, Button, Container, Stack, Typography } from '@mui/material';
 // components
 import Iconify from '../components/iconify';
-import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../sections/@dashboard/blog';
+import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../sections/@dashboard/blog/index';
 // mock
 import POSTS from '../_mock/blog';
 
@@ -17,17 +17,17 @@ const SORT_OPTIONS = [
 
 // ----------------------------------------------------------------------
 
-export default function BlogPage() {
+export default function ProjectPage() {
   return (
     <>
       <Helmet>
-        <title> Dashboard: Blog | Minimal UI </title>
+        <title> Dashboard: Project | projectHub </title>
       </Helmet>
 
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
           <Typography variant="h4" gutterBottom>
-            Blog
+            Projects
           </Typography>
           <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />}>
             New Post
