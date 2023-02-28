@@ -9,7 +9,7 @@ namespace projecthub.Models
 
         }
 
-        public DbSet<Project> Projects => Set<Project>();
+        public DbSet<Projects> Projects => Set<Projects>();
         public DbSet<User> Users => Set<User> ();
         
     }

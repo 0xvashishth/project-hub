@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using projecthub.Models;
 
@@ -59,14 +60,26 @@ namespace projecthub.Controllers
         // PUT: api/Projects/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProject(long id, Project project)
+        public async Task<IActionResult> PutProject(long id, ProjectCreateDTO project)
         {
             if (id != project.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(project).State = EntityState.Modified;
+            var proj = await _context.Projects.FindAsync(id);
+            if(proj == null)
+            {
+                return NotFound("Project Not Found");
+            }
+
+            proj.Ytlink = project.Ytlink;
+            proj.Visibility = project.visibility;
+            proj.Description = project.Description;
+            proj.Name = project.Name;
+            proj.Imagesurls = project.Imagesurls;
+
+            _context.Entry(proj).State = EntityState.Modified;
 
             try
             {
@@ -74,32 +87,45 @@ namespace projecthub.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProjectExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                throw;
             }
 
-            return NoContent();
+            return Ok("Project Updated Sucessfully");
         }
 
         // POST: api/Projects
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Project>> PostProject(Project project)
+        public async Task<ActionResult<ProjectDTO>> PostProject(ProjectCreateDTO project, long creatorId)
         {
           if (_context.Projects == null)
           {
               return Problem("Entity set 'ProjectContext.Projects'  is null.");
           }
-            _context.Projects.Add(project);
+
+          if(creatorId != int.Parse(project.creator))
+            {
+                return BadRequest();
+            }
+
+            Projects proj = new Projects();
+            proj.Name = project.Name;
+            proj.Imagesurls = project.Imagesurls;
+            proj.Description = project.Description;
+            proj.Ytlink = project.Ytlink;
+            proj.Visibility = project.visibility;
+            User user = await _context.Users.FindAsync(creatorId);
+            if(user == null)
+            {
+                return NotFound("Creator not found");
+            }
+            proj.Creater = user;
+            proj.Likes = 0;
+            proj.Reports=0;
+            _context.Projects.Add(proj);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProject", new { id = project.Id }, project);
+            return projectToDto(proj);
         }
 
         // DELETE: api/Projects/5
@@ -122,16 +148,17 @@ namespace projecthub.Controllers
             return NoContent();
         }
 
-        private ProjectDTO projectToDto(Project proj)
+        private static ProjectDTO projectToDto(Projects proj)
         {
+            Console.WriteLine(proj.CreaterId);
             return new ProjectDTO
             {
                 Id = proj.Id,
                 Name = proj.Name,
                 Description = proj.Description,
                 Imagesurls = proj.Imagesurls,
+                Creator = (proj.CreaterId).ToString(),
                 Ytlink = proj.Ytlink,
-                Creator = proj.Creater!.Name,
                 Likes = proj.Likes,
                 Reports = proj.Reports
             };

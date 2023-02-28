@@ -24,6 +24,6 @@
         public byte[]? PasswordHash { get; set; } = Array.Empty<byte>();
         public byte[]? PasswordSalt { get; set; } = Array.Empty<byte>();
         public string? Secret_token { get; set; }
-        public List<Project>? Projects { get; set; }
+        public List<Projects>? Projects { get; set; }
     }
 }

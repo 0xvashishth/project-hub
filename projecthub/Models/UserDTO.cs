@@ -9,7 +9,7 @@
         public string? Linkedin { get; set; }
         public string? Github { get; set; }
         public int Points { get; set; }
-        public List<Project>? Projects { get; set; }
+        public List<Projects>? Projects { get; set; }
 
     }
 }
