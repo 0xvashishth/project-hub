@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,31 +10,37 @@ using projecthub.Models;
 
 namespace projecthub.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProjectsController : ControllerBase
     {
         private readonly ProjectContext _context;
+        private readonly IConfiguration _configuration;
 
-        public ProjectsController(ProjectContext context)
+        public ProjectsController(ProjectContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration=configuration;
         }
 
         // GET: api/Projects
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Project>>> GetProjects()
+        [AllowAnonymous]
+        public async Task<ActionResult<IEnumerable<ProjectDTO>>> GetProjects()
         {
           if (_context.Projects == null)
           {
               return NotFound();
           }
-            return await _context.Projects.ToListAsync();
+            return await _context.Projects.Select(x => projectToDto(x)).ToListAsync();
+            /*return await _context.Users.Select(x => UserToDto(x)).ToListAsync();*/
         }
 
         // GET: api/Projects/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Project>> GetProject(long id)
+        [AllowAnonymous]
+        public async Task<ActionResult<ProjectDTO>> GetProject(long id)
         {
           if (_context.Projects == null)
           {
@@ -46,7 +53,7 @@ namespace projecthub.Controllers
                 return NotFound();
             }
 
-            return project;
+            return projectToDto(project);
         }
 
         // PUT: api/Projects/5
@@ -113,6 +120,21 @@ namespace projecthub.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        private ProjectDTO projectToDto(Project proj)
+        {
+            return new ProjectDTO
+            {
+                Id = proj.Id,
+                Name = proj.Name,
+                Description = proj.Description,
+                Imagesurls = proj.Imagesurls,
+                Ytlink = proj.Ytlink,
+                Creator = proj.Creater!.Name,
+                Likes = proj.Likes,
+                Reports = proj.Reports
+            };
         }
 
         private bool ProjectExists(long id)
