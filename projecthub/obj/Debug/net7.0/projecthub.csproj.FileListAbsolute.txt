@@ -306,3 +306,7 @@ C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\scopedcss\bundle\
 C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.csproj.CopyComplete
 C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\projecthub.genruntimeconfig.cache
 C:\Users\VASU\Documents\github\wsd\projecthub\obj\Debug\net7.0\ref\projecthub.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Scrutor.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
