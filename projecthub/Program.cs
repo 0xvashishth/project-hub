@@ -25,6 +25,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddCors();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("oauth2", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
@@ -38,14 +41,13 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
-
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("*"));
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();

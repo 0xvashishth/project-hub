@@ -133,6 +133,10 @@ namespace projecthub.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<UserDTO>> Register(UserDTO user, string password)
         {
+            if(password == null || user.Email == null || user.Name == null)
+            {
+                return BadRequest($"Email, Name & Password Are Required...!");
+            }
             if (_context.Users == null)
             {
                 return Problem("Entity set 'ProjectContext.Users'  is null.");
