@@ -310,3 +310,6 @@ C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Microsoft.AspNetC
 C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Scrutor.dll
 C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\System.Net.Http.Formatting.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\System.Web.Http.dll
+C:\Users\VASU\Documents\github\wsd\projecthub\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll

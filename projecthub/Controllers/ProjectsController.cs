@@ -57,6 +57,7 @@ namespace projecthub.Controllers
             return projectToDto(project);
         }
 
+
         // PUT: api/Projects/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -64,7 +65,7 @@ namespace projecthub.Controllers
         {
             if (id != project.Id)
             {
-                return BadRequest();
+                return Ok();
             }
 
             var proj = await _context.Projects.FindAsync(id);

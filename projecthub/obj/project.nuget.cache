@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "sytBlKGb21ucDo+odlQ3u4QoI7eWDFOvPogatYkLrS/8utxaOBumfRdX8oYQIoC9BKQvgC3+AEpGFALs53SQag==",
+  "dgSpecHash": "jHtjUzcOwvU3BCSTk9Nvca2qNAuBEC2ppOeKl1A2RvkCYFGdnrfVVMgTEX0ndLr/F8Og0PGyt7psvSeMjUdSPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\VASU\\Documents\\github\\wsd\\projecthub\\projecthub.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VASU\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\VASU\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
+    "C:\\Users\\VASU\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.2.9\\microsoft.aspnet.webapi.core.5.2.9.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.3\\microsoft.aspnetcore.authentication.jwtbearer.7.0.3.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.2\\microsoft.aspnetcore.openapi.7.0.2.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",
@@ -78,6 +80,7 @@
     "C:\\Users\\VASU\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\VASU\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\nuget.common\\6.3.1\\nuget.common.6.3.1.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\nuget.configuration\\6.3.1\\nuget.configuration.6.3.1.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\nuget.dependencyresolver.core\\6.3.1\\nuget.dependencyresolver.core.6.3.1.nupkg.sha512",
@@ -197,5 +200,16 @@
     "C:\\Users\\VASU\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\VASU\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.WebApi.Core",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
